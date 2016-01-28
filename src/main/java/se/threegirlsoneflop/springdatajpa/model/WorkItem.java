@@ -25,7 +25,6 @@ public class WorkItem extends AbstractEntity{
     public WorkItem(String description){
         this.description = description;
         this.status = Status.Unstarted;
-        this.issue = issue;
     }
 
     public String getDescription() {
