@@ -1,5 +1,7 @@
 package se.threegirlsoneflop.springdatajpa.model;
 
+import se.threegirlsoneflop.springdatajpa.status.Status;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
