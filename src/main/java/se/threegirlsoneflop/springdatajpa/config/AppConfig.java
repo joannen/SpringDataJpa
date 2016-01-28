@@ -30,7 +30,7 @@ public class AppConfig {
         config.setDriverClassName("com.mysql.jdbc.Driver");
         config.setJdbcUrl("jdbc:mysql://localhost/springdatajpa");
         config.setUsername("root");
-        config.setPassword("hannele1");
+        config.setPassword("password");
 
         return new HikariDataSource(config);
     }
