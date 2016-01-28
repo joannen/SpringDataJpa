@@ -10,8 +10,14 @@ import javax.persistence.*;
 @Entity
 public class WorkItem extends AbstractEntity{
 
+    @Column(nullable = false)
     private String description;
+
+    @Column
     private String status;
+
+    @OneToOne
+    private Issue issue;
 
     protected WorkItem(){
     }
@@ -19,6 +25,7 @@ public class WorkItem extends AbstractEntity{
     public WorkItem(String description){
         this.description = description;
         this.status = Status.Unstarted;
+        this.issue = issue;
     }
 
     public String getDescription() {
@@ -41,6 +48,14 @@ public class WorkItem extends AbstractEntity{
 
     public void setStatusDone(){
         this.status = Status.Done;
+    }
+
+    public Issue getIssue(){
+        return issue;
+    }
+
+    public void setIssue(Issue issue){
+        this.issue = issue;
     }
 
 
