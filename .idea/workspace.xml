@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6f3dbb9b-45f0-4ed1-8dc8-54a7a109a671" name="Default" comment="equal and hashcode in workitem">
+    <list default="true" id="6f3dbb9b-45f0-4ed1-8dc8-54a7a109a671" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/se/threegirlsoneflop/springdatajpa/model/WorkItem.java" afterPath="$PROJECT_DIR$/src/main/java/se/threegirlsoneflop/springdatajpa/model/WorkItem.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/se/threegirlsoneflop/springdatajpa/service/WorkItemRepository.java" afterPath="$PROJECT_DIR$/src/main/java/se/threegirlsoneflop/springdatajpa/service/WorkItemRepository.java" />
     </list>
     <ignored path="SpringDataJpa.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -39,8 +37,8 @@
       <file leaf-file-name="WorkItem.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/se/threegirlsoneflop/springdatajpa/model/WorkItem.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.2515724">
-              <caret line="77" column="58" selection-start-line="77" selection-start-column="58" selection-end-line="77" selection-end-column="58" />
+            <state vertical-scroll-proportion="1.0137931">
+              <caret line="53" column="5" selection-start-line="53" selection-start-column="5" selection-end-line="53" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#831#832#0" expanded="true" />
@@ -681,7 +679,13 @@
       <option name="project" value="LOCAL" />
       <updated>1453987042510</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="equal and hashcode in workitem again">
+      <created>1453987485396</created>
+      <option name="number" value="00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1453987485396</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -690,7 +694,7 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32934928" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934928" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -729,7 +733,8 @@
     <MESSAGE value="Added Issue" />
     <MESSAGE value="Team class" />
     <MESSAGE value="equal and hashcode in workitem" />
-    <option name="LAST_COMMIT_MESSAGE" value="equal and hashcode in workitem" />
+    <MESSAGE value="equal and hashcode in workitem again" />
+    <option name="LAST_COMMIT_MESSAGE" value="equal and hashcode in workitem again" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -806,8 +811,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/se/threegirlsoneflop/springdatajpa/model/WorkItem.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.2515724">
-          <caret line="77" column="58" selection-start-line="77" selection-start-column="58" selection-end-line="77" selection-end-column="58" />
+        <state vertical-scroll-proportion="1.0137931">
+          <caret line="53" column="5" selection-start-line="53" selection-start-column="5" selection-end-line="53" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#831#832#0" expanded="true" />
