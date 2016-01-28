@@ -19,9 +19,6 @@ public class WorkItem extends AbstractEntity {
     @OneToOne
     private Issue issue;
 
-    @OneToOne
-    private User user;
-
     protected WorkItem(){
     }
 
@@ -58,14 +55,6 @@ public class WorkItem extends AbstractEntity {
 
     public void setIssue(Issue issue){
         this.issue = issue;
-    }
-
-    public User getUser(){
-        return user;
-    }
-
-    public void setUser(User user){
-        this.user = user;
     }
 
     @Override

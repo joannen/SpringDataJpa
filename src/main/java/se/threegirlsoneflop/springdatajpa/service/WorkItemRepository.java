@@ -10,9 +10,8 @@ public interface WorkItemRepository extends JpaRepository<WorkItem, Long> {
 
     Collection<WorkItem> findWorkItemsWithIssue();
 
-    Collection<WorkItem> findWorkItemByStatus();
+    Collection<WorkItem> findWorkItemsByStatus();
 
-    Collection<WorkItem> findWorkItemByTeam();
 
 
 
