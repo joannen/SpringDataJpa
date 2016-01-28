@@ -13,7 +13,8 @@ public class Team extends AbstractEntity {
 
     @Column(nullable = false, unique = true)
     private String teamName;
-    private Status status;
+    @Column(nullable = false)
+    private String status;
     @OneToMany
     private Collection<User> users;
 
@@ -21,11 +22,16 @@ public class Team extends AbstractEntity {
 
     public Team(String teamName) {
         this.teamName = teamName;
+        this.status = Status.Active;
         this.users = new HashSet<>();
     }
 
     public String getTeamName() {
         return teamName;
+    }
+
+    public String getStatus() {
+        return status;
     }
 
     public Collection<User> getUsers() {
@@ -34,6 +40,16 @@ public class Team extends AbstractEntity {
 
     public Team addUser(User user){
         this.users.add(user);
+        return this;
+    }
+
+    public Team setStatusInactive(){
+        this.status = Status.Inactive;
+        return this;
+    }
+
+    public Team setStatusActive(){
+        this.status = Status.Active;
         return this;
     }
 
@@ -54,5 +70,13 @@ public class Team extends AbstractEntity {
         int result = teamName != null ? teamName.hashCode() : 0;
         result = 31 * result + (status != null ? status.hashCode() : 0);
         return result;
+    }
+
+    @Override
+    public String toString() {
+        return "Team{" +
+                "teamName='" + teamName + '\'' +
+                ", status='" + status + '\'' +
+                '}';
     }
 }
