@@ -8,9 +8,9 @@ import javax.persistence.*;
  * Created by TheYellowBelliedMarmot on 2016-01-28.
  */
 @Entity
-public class WorkItem extends AbstractEntity{
+public class WorkItem extends AbstractEntity {
 
-    @Column(nullable = false)
+    @Column(nullable = false, unique = true)
     private String description;
 
     @Column(nullable = false)
@@ -18,6 +18,9 @@ public class WorkItem extends AbstractEntity{
 
     @OneToOne
     private Issue issue;
+
+    @OneToOne
+    private User user;
 
     protected WorkItem(){
     }
@@ -57,6 +60,14 @@ public class WorkItem extends AbstractEntity{
         this.issue = issue;
     }
 
+    public User getUser(){
+        return user;
+    }
+
+    public void setUser(User user){
+        this.user = user;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -66,16 +77,13 @@ public class WorkItem extends AbstractEntity{
 
         if (description != null ? !description.equals(workItem.description) : workItem.description != null)
             return false;
-        if (status != null ? !status.equals(workItem.status) : workItem.status != null) return false;
-        return issue != null ? issue.equals(workItem.issue) : workItem.issue == null;
-
+        return status != null ? status.equals(workItem.status) : workItem.status == null;
     }
 
     @Override
     public int hashCode() {
         int result = description != null ? description.hashCode() : 0;
         result = 31 * result + (status != null ? status.hashCode() : 0);
-        result = 31 * result + (issue != null ? issue.hashCode() : 0);
         return result;
     }
 
@@ -84,7 +92,6 @@ public class WorkItem extends AbstractEntity{
         return "WorkItem{" +
                 "description='" + description + '\'' +
                 ", status='" + status + '\'' +
-                ", issue=" + issue +
                 '}';
     }
 }
