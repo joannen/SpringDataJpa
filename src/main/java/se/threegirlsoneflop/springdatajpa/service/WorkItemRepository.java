@@ -9,4 +9,6 @@ import java.util.Collection;
 public interface WorkItemRepository extends JpaRepository<WorkItem, Long> {
 
     Collection<WorkItem> findWorkItemsWithIssue();
+
+
 }

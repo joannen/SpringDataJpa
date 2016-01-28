@@ -1,5 +1,7 @@
 package se.threegirlsoneflop.springdatajpa.model;
 
+import se.threegirlsoneflop.springdatajpa.status.Status;
+
 import javax.persistence.*;
 
 /**
@@ -9,16 +11,14 @@ import javax.persistence.*;
 public class WorkItem extends AbstractEntity{
 
     private String description;
-
-    @Embeddable
-    private Status status;
+    private String status;
 
     protected WorkItem(){
     }
 
     public WorkItem(String description){
         this.description = description;
-        this.status = Status.UNSTARTED;
+        this.status = Status.Unstarted;
     }
 
     public String getDescription() {
@@ -28,6 +28,21 @@ public class WorkItem extends AbstractEntity{
     public void setDescription(String description) {
         this.description = description;
     }
+
+    public String getStatus(){ return status;}
+
+    public void setStatusUnstarted(){
+        this.status = Status.Unstarted;
+    }
+
+    public void setStatusStarted(){
+        this.status = Status.Started;
+    }
+
+    public void setStatusDone(){
+        this.status = Status.Done;
+    }
+
 
     public boolean equals(Object o) {
         if (this == o) return true;
