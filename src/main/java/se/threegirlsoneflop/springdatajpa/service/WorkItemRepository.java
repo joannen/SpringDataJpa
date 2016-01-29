@@ -14,7 +14,7 @@ public interface WorkItemRepository extends JpaRepository<WorkItem, Long> {
 
     Collection<WorkItem> findWorkItemsByStatus(Status status);
 
-    Collection<WorkItem> findWorkitemsByUser(User user);
+    Collection<WorkItem> findWorkItemsByUser(User user);
 
     Collection<WorkItem> getByDescriptionLike(String description);
 
