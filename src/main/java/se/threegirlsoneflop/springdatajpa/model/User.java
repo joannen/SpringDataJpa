@@ -6,6 +6,7 @@ import se.threegirlsoneflop.springdatajpa.status.Status;
 
 import javax.annotation.Generated;
 import javax.persistence.*;
+import java.util.Collection;
 
 /**
  * Created by joanne on 28/01/16.
@@ -27,6 +28,9 @@ public class User extends AbstractEntity {
 
     @ManyToOne
     private Team team;
+
+    @OneToMany(mappedBy = "description")
+    private Collection<WorkItem> workitems;
 
     protected User() {}
 
