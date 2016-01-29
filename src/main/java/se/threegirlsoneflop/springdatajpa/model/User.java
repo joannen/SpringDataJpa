@@ -6,6 +6,7 @@ import se.threegirlsoneflop.springdatajpa.status.Status;
 
 import javax.annotation.Generated;
 import javax.persistence.*;
+import java.util.Collection;
 
 /**
  * Created by joanne on 28/01/16.
@@ -16,17 +17,20 @@ public class User extends AbstractEntity {
     @Id
     @GeneratedValue
     private Long Id;
-    @Column
+    @Column ()
     private String userNumber;
-    @Column
+    @Column (nullable = false, unique = true)
     private String firstName;
-    @Column
+    @Column (nullable = false)
     private String lastName;
-    @Column
+    @Column (nullable = false)
     private String status;
 
     @ManyToOne
     private Team team;
+
+    @OneToMany(mappedBy = "user")
+    private Collection<WorkItem> workItems;
 
     protected User() {}
 
@@ -36,6 +40,7 @@ public class User extends AbstractEntity {
     i Team-klassen returnerar. Tycker ni att det skulle vara ok att införa ytterligare en konstruktor i Team? Se bort-
     kommenterad kod */
     public User(String firstName, String lastName) {
+        setUserNumber();
         this.firstName = firstName;
         this.lastName = lastName;
         setStatusActive();
@@ -46,7 +51,7 @@ public class User extends AbstractEntity {
         return userNumber;
     }
 
-    public void setUserNumber(String userNumber) {
+    public void setUserNumber() {
         this.userNumber = userNumber;
     }
 
@@ -76,6 +81,10 @@ public class User extends AbstractEntity {
 
     public void setStatusActive() {
         this.status = Status.Active;
+    }
+
+    public void addWorkItem(WorkItem workItem) {
+        workItems.add(workItem);
     }
 
     /*public void setTeam(User user) {
