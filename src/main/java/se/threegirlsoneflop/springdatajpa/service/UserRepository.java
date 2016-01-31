@@ -3,6 +3,7 @@ package se.threegirlsoneflop.springdatajpa.service;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import se.threegirlsoneflop.springdatajpa.model.User;
+import se.threegirlsoneflop.springdatajpa.model.WorkItem;
 
 import javax.persistence.Column;
 import java.util.Collection;
@@ -20,4 +21,6 @@ public interface UserRepository extends JpaRepository<User, Long> {
 
     @Query("select u from #{#entityName} u where u.team = ?1")
     List<User> findAllByTeam(String teamName);
+
+    Collection<WorkItem> findByWorkItems(User user);
 }

@@ -20,7 +20,6 @@ public class WorkItem extends AbstractEntity {
     private Issue issue;
 
     @ManyToOne
-    @JoinColumn
     private User user;
 
     protected WorkItem(){

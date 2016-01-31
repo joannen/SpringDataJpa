@@ -7,16 +7,14 @@ import se.threegirlsoneflop.springdatajpa.status.Status;
 import javax.annotation.Generated;
 import javax.persistence.*;
 import java.util.Collection;
+import java.util.HashSet;
 
 /**
  * Created by joanne on 28/01/16.
  */
 @Entity
 public class User extends AbstractEntity {
-
-    @Id
-    @GeneratedValue
-    private Long Id;
+    
     @Column ()
     private String userNumber;
     @Column (nullable = false, unique = true)
@@ -44,7 +42,8 @@ public class User extends AbstractEntity {
         this.firstName = firstName;
         this.lastName = lastName;
         setStatusActive();
-        //this.team = new Team();
+        this.team = new Team();
+        this.workItems = new HashSet<>();
     }
 
     public String getUserNumber() {
@@ -85,6 +84,10 @@ public class User extends AbstractEntity {
 
     public void addWorkItem(WorkItem workItem) {
         workItems.add(workItem);
+    }
+
+    public Collection<WorkItem> getWorkItem(){
+        return workItems;
     }
 
     /*public void setTeam(User user) {
