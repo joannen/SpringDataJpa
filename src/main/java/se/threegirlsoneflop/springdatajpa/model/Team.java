@@ -39,8 +39,10 @@ public class Team extends AbstractEntity {
     }
 
     public Team addUser(User user){
-        this.users.add(user);
-        return this;
+        if(this.users.add(user)) {
+            return this;
+        }
+        return null;
     }
 
     public Team setStatusInactive(){
