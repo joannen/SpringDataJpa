@@ -14,7 +14,7 @@ import java.util.HashSet;
  */
 @Entity
 public class User extends AbstractEntity {
-    
+
     @Column ()
     private String userNumber;
     @Column (nullable = false, unique = true)
