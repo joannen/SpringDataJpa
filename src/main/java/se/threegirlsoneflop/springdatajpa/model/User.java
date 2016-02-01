@@ -6,6 +6,7 @@ import se.threegirlsoneflop.springdatajpa.status.Status;
 
 import javax.annotation.Generated;
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashSet;
 
@@ -15,12 +16,15 @@ import java.util.HashSet;
 @Entity
 public class User extends AbstractEntity {
 
-    @Column ()
+    @Column
     private String userNumber;
+
     @Column (nullable = false, unique = true)
     private String firstName;
+
     @Column (nullable = false)
     private String lastName;
+
     @Column (nullable = false)
     private String status;
 
@@ -32,17 +36,11 @@ public class User extends AbstractEntity {
 
     protected User() {}
 
-    /*Vad gäller team initialisering. Hur ska jag initialisera denna? För mig känns det konstigt att man
-    skulle behöva ange teamName när man skapar en User. En User kan väl ibland inte tillhöra ett team?
-    Jag vill i konstruktorn kunna skriva this.team = new Team() och sen ha en setTeam() som tar emot det team som addUser
-    i Team-klassen returnerar. Tycker ni att det skulle vara ok att införa ytterligare en konstruktor i Team? Se bort-
-    kommenterad kod */
     public User(String firstName, String lastName) {
         setUserNumber();
         this.firstName = firstName;
         this.lastName = lastName;
         setStatusActive();
-        this.team = new Team();
         this.workItems = new HashSet<>();
     }
 
@@ -87,12 +85,8 @@ public class User extends AbstractEntity {
     }
 
     public Collection<WorkItem> getWorkItem(){
-        return workItems;
+        return new ArrayList<>(workItems);
     }
-
-    /*public void setTeam(User user) {
-        this.team = team.addUser(this);
-    }*/
 
     public Team getTeam() {
         return team;

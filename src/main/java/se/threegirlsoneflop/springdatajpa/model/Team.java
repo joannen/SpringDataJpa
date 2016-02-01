@@ -13,9 +13,11 @@ public class Team extends AbstractEntity {
 
     @Column(nullable = false, unique = true)
     private String teamName;
+
     @Column(nullable = false)
     private String status;
-    @OneToMany
+
+    @OneToMany(mappedBy = "team")
     private Collection<User> users;
 
     protected Team(){}

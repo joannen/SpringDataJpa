@@ -21,7 +21,7 @@ import javax.sql.DataSource;
  */
 @Configuration
 @EnableTransactionManagement
-@EnableJpaRepositories("se.threegirlsoneflop.repository")
+@EnableJpaRepositories("se.threegirlsoneflop.service")
 public class AppConfig {
 
     @Bean

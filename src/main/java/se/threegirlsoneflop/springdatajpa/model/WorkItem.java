@@ -16,18 +16,18 @@ public class WorkItem extends AbstractEntity {
     @Column(nullable = false)
     private String status;
 
-    @OneToOne
+    @Embedded
     private Issue issue;
 
     @ManyToOne
     private User user;
 
-    protected WorkItem(){
-    }
+    protected WorkItem(){}
 
     public WorkItem(String description){
         this.description = description;
         this.status = Status.Unstarted;
+        this.issue = new Issue();
     }
 
     public String getDescription() {

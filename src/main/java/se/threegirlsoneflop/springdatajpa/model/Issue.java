@@ -1,11 +1,16 @@
 package se.threegirlsoneflop.springdatajpa.model;
 
+import se.threegirlsoneflop.springdatajpa.status.Status;
+
 import javax.persistence.Column;
+import javax.persistence.Embeddable;
 import javax.persistence.Entity;
 import javax.persistence.OneToOne;
 
-@Entity
+@Embeddable
 public class Issue extends AbstractEntity {
+
+    public final static String NoIssue = "No issue";
 
     @Column(nullable = false)
     private String status;
@@ -13,27 +18,21 @@ public class Issue extends AbstractEntity {
     @Column(nullable = false)
     private String issueDescription;
 
-    @OneToOne
-    private WorkItem workItem;
+    public Issue() {
+        this.issueDescription = NoIssue;
+        this.status = Status.Inactive;
+    }
 
-    public Issue(String issueDescription, WorkItem workItem) {
+    public Issue(String issueDescription) {
         this.issueDescription = issueDescription;
-        this.workItem = workItem;
+        this.status = Status.Active;
     }
 
     public String getIssueDescription() {
         return issueDescription;
     }
 
-    public void setIssueDescription(String issueDescription) {
-        this.issueDescription = issueDescription;
-    }
-
-    public WorkItem getWorkItem() {
-        return workItem;
-    }
-
-    public void setWorkItem(WorkItem workItem) {
-        this.workItem = workItem;
+    public void setDone() {
+        this.status = Status.Done;
     }
 }
