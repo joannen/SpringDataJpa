@@ -1,0 +1,42 @@
+Funktioner:
+- Skapa en User
+- Uppdatera en User
+- Inaktivera en User
+- Hämta en User baserat på user id/number (inte entity id)
+- Söka efter en User baserat på förnamn och/eller efternamn och/eller användarnamn
+- Hämta alla User som ingår i ett visst team
+Affärslogik:
+- En User måste ha ett användarnamn som är minst 10 tecken långt
+- När en User inaktivares ändras status på alla dennes WorkItem till Unstarted
+
+Team - en gruppering av User
+Funktioner:
+- Skapa ett team
+- Uppdatera ett team
+- Inaktivera ett team
+- Hämta alla team
+- Lägga till en User till ett team
+Affärslogik:
+- Det får max vara 10 users i ett team
+- En User kan bara ingå i ett team åt gången
+
+Work item - ett ärende som tilldelas en User
+Funktioner:
+- Skapa en work item
+- Ändra status på en work item [Unstarted, Started, Done]
+- Ta bort* en work item
+- Tilldela en work item till en User
+- Hämta alla work item baserat på status
+- Hämta alla work item för ett Team
+- Hämta alla work item för en User
+- Söka efter work item som innehåller en viss text i sin beskrivning
+Affärslogik:
+- En WorkItem kan inte tilldelas en User som inte är aktiv
+- En User kan max ha 5 WorkItems samtidigt
+Issue - en anmärkning som kan ges en work item när den inte accepteras
+- Skapa en Issue och lägga till den till en work item
+- Uppdatera en Issue
+- Hämta alla work item som har en Issue
+Affärslogik:
+- En Issue ska bara kunna läggas till work item som har status Done
+- När en Issue läggs till en work item ändras status för work item till Unstarted
